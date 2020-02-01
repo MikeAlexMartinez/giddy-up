@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router } from '@reach/router';
+
+import './App.scss';
+
+import { Provider as StatusProvider } from './context/StatusContext';
+
+import Home from './pages/Home';
+import ReturningCustomer from './pages/ReturningCustomer';
+import NewCustomer from './pages/NewCustomer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StatusProvider>
+      <Router>
+        <Home path="/" />
+        <ReturningCustomer path="checkout/returning" />
+        <NewCustomer path="checkout/new" />
+      </Router>
+    </StatusProvider>
   );
 }
 
