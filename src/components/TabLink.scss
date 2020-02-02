@@ -1,0 +1,34 @@
+@import '../styles/variables.scss';
+
+.tab {
+  padding: 1em;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+
+  &.active {
+    color: black;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top: $border-style;
+    border-left: $border-style;
+    border-right: $border-style;
+
+  }
+  
+  &.inactive {
+    color: white;
+    border-bottom: $border-style;
+
+    & > .link-text {
+      border-bottom: $link-underline;
+    }
+  }
+}
+
+.link-text {
+  display: inline-block;
+  padding-bottom: 1px;
+}
+

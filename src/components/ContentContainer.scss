@@ -1,0 +1,9 @@
+@import '../styles/variables.scss';
+
+.content-container {
+  flex: auto;
+  display: flex;
+  background-color: white;
+  border-right: $border-style;
+  border-left: $border-style;
+}

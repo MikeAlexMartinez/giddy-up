@@ -1,9 +1,16 @@
 import React from 'react';
+import './Checkout.scss';
 
-const Checkout = () => {
+const Checkout = ({ children }) => {
   return (
-    <div>
-      
+    <div className="checkout-container">
+      <div className="checkout-content">
+        Checkout
+        {children}
+      </div>
+      <div className="checkout-controls">
+        button container
+      </div>
     </div>
   );
 };

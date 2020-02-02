@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
-import { Link } from '@reach/router';
 import './Header.scss';
 
 import { Context as StatusContext } from '../context/StatusContext';
 
 import Button from './Button';
+import TabLink from './TabLink';
 
 const Navigation = ({ title }) => {
   const { state, toggleEverything, toggleAwesome } = useContext(StatusContext);
 
-  const everythingButtonLabel = state.everything ? 'Everthing' : 'Nothing';
+  const everythingButtonLabel = state.everything ? 'Everything' : 'Nothing';
   const awesomeButtonLabel = state.awesome ? 'is Awesome' : 'is Rubbish';
 
   return (
@@ -20,11 +20,9 @@ const Navigation = ({ title }) => {
         <Button label={awesomeButtonLabel} onClick={() => toggleAwesome()} />
       </div>
       <nav className="nav-container">
-        <Link to="/">Home</Link>
-        <div> | {" "}</div>
-        <Link to="/checkout/returning">Checkout Existing</Link>
-        <div> | {" "}</div>
-        <Link to="/checkout/new">Checkout New</Link>
+        <TabLink to="/">Home</TabLink>
+        <TabLink to="/checkout/returning">Checkout Existing</TabLink>
+        <TabLink to="/checkout/new">Checkout New</TabLink>
       </nav>
     </div>
   );
